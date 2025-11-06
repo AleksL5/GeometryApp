@@ -9,13 +9,8 @@ import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-/**
- * Пример Mojo, который сравнивает площади двух фигур и выводит результат.
- */
 @Mojo(name = "compare-shapes")
 public class MyGeometryUtilsMojo extends AbstractMojo {
-
-
 
     @Parameter(property = "shape1Type", defaultValue = "circle")
     private String shape1Type;
@@ -58,7 +53,7 @@ public class MyGeometryUtilsMojo extends AbstractMojo {
 
     private void printShapeInfo(Shape2D shape, String type, double param1, double param2) {
         double area = shape.area();
-        double perimeter = shape.perimeter(); // допустим, метод perimeter() есть
+        double perimeter = shape.perimeter();
         getLog().info("Shape: " + type);
         if ("circle".equalsIgnoreCase(type)) {
             getLog().info("Radius: " + param1);
